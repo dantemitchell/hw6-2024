@@ -68,18 +68,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var vintageButton = document.getElementById("vintage");
     vintageButton.addEventListener("click", function() {
-        video.classList.toggle("oldSchool");
-    });
+        const video = document.querySelector('.video');
+    	video.classList.add('oldSchool');
+	});
 	originalButton.addEventListener('click', function() {
 		const video = document.querySelector('.video');
 		video.classList.remove('oldSchool');
 	});
 
     const slider = document.getElementById('slider');
-    slider.addEventListener('input', function() {
-        volumeSpan.textContent = this.value;
-        video.volume = this.value / 100;
-    });
+
+	slider.addEventListener('input', function() {
+		volumeSpan.textContent = this.value + '%';
+		video.volume = this.value / 100;
+	});
 });
 
 
